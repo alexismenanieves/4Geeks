@@ -33,7 +33,7 @@ def blackjack_game(deck):
     global cards_values
 
     player_cards = []
-    player_score = 0 
+    player_score = 0
     while len(player_cards) < 2:
         player_card = random.choice(deck)
         player_cards.append(player_card)
@@ -42,10 +42,13 @@ def blackjack_game(deck):
         player_score += player_card.card_value
 
         if len(player_cards) == 2:
-            if player_cards[0].card_value == 11 and player_cards[1].card_value == 11:
+            if (
+                player_cards[0].card_value == 11 and
+                    player_cards[1].card_value == 11
+            ):
                 player_cards[0].card_value = 1
                 player_score -= 10
-     
+
         print('Player cards: ')
         print(repr(player_cards))
         print(f'Player score: {player_score}')
@@ -60,13 +63,13 @@ def blackjack_game(deck):
 def blackjack_game_rep():
     global cards_values
 
-    deck = [] 
+    deck = []
     for suit in suits:
         for card in cards:
             deck.append(Card(suits_values[suit], card, cards_values[card]))
 
     player_cards = []
-    player_score = 0 
+    player_score = 0
     while len(player_cards) < 2:
         player_card = random.choice(deck)
         player_cards.append(player_card)
@@ -75,7 +78,10 @@ def blackjack_game_rep():
         player_score += player_card.card_value
 
         if len(player_cards) == 2:
-            if player_cards[0].card_value == 11 and player_cards[1].card_value == 11:
+            if (
+                player_cards[0].card_value == 11 and
+                    player_cards[1].card_value == 11
+            ):
                 player_cards[0].card_value = 1
                 player_score -= 10
 
